@@ -1,8 +1,9 @@
 
-const express = require('express');
+import express from 'express';
+import Subscription from '../models/Subscription.js';
+import auth from '../middleware/auth.js';
+
 const router = express.Router();
-const Subscription = require('../models/Subscription');
-const auth = require('../middleware/auth');
 
 // Get all subscriptions for logged-in user
 router.get('/', auth, async (req, res) => {
@@ -77,4 +78,4 @@ router.delete('/:id', auth, async (req, res) => {
   }
 });
 
-module.exports = router;
+export default router;
