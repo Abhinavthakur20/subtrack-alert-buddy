@@ -34,7 +34,7 @@ const SubscriptionCard: React.FC<SubscriptionCardProps> = ({
     if (daysTillPayment <= 0) {
       return { label: 'Due Today', variant: 'destructive' as const };
     } else if (daysTillPayment <= subscription.reminderDays) {
-      return { label: 'Due Soon', variant: 'warning' as const };
+      return { label: 'Due Soon', variant: 'secondary' as const };
     } else {
       return { label: 'Upcoming', variant: 'outline' as const };
     }
