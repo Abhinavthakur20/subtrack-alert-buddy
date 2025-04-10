@@ -3,6 +3,7 @@ import React from 'react';
 import { Bell, User, Search } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
+import { ThemeToggle } from './ThemeToggle';
 
 interface NavbarProps {
   onSearchChange: (query: string) => void;
@@ -10,7 +11,7 @@ interface NavbarProps {
 
 const Navbar: React.FC<NavbarProps> = ({ onSearchChange }) => {
   return (
-    <nav className="bg-white shadow-sm py-4 px-6 sticky top-0 z-10">
+    <nav className="bg-background border-b border-border py-4 px-6 sticky top-0 z-10">
       <div className="flex items-center justify-between">
         <div className="flex items-center">
           <h1 className="text-2xl font-bold text-primary">SubTrack</h1>
@@ -26,6 +27,7 @@ const Navbar: React.FC<NavbarProps> = ({ onSearchChange }) => {
         </div>
 
         <div className="flex items-center space-x-4">
+          <ThemeToggle />
           <Button variant="outline" size="icon">
             <Bell className="h-5 w-5" />
           </Button>
